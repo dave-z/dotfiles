@@ -1,0 +1,6 @@
+prompt_minimal_setup() {
+    autoload -Uz colors && colors
+    PROMPT='%(?.%F{green}√.%F{red}✕) %F{magenta}%~ %F{yellow}$%f '
+}
+
+prompt_minimal_setup "$@"
