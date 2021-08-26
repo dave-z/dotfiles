@@ -59,3 +59,5 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
+# grep through non-source controlled files too
+export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/rc
