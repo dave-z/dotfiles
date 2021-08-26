@@ -12,7 +12,6 @@ echo rootdir is $rootdir
 for srcfile in $(find $rootdir -type l -or -type f -not -path "${rootdir}/.git*" -not -path $0); do
     # echo source file $srcfile
     dstfile="${HOME}${srcfile##${rootdir}}"
-    dstfile="${HOME}/mnt/src/dotfiles-test${srcfile##${rootdir}}"
     # echo dest file $dstfile
     if [ -e "${dstfile}" -a ! -L "${dstfile}" ]; then
         echo -e "${RED}$dstfile exists, moving to ${dstfile}.orig${NC}"
