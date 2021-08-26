@@ -22,9 +22,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
-
 setopt histignorealldups sharehistory
 
 # Use emacs keybindings even if our EDITOR is set to vi
@@ -58,3 +55,7 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
