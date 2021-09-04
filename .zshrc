@@ -8,8 +8,8 @@ export CLICOLOR=1
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
 fi
 
 # lifted from Ubuntu 18 .bashrc
