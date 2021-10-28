@@ -1,17 +1,33 @@
+" airline status customizations, reduce status bar usage
+let g:airline#extensions#branch#enabled = 0
+let g:airline#extensions#whitespace#enabled = 0
+autocmd FileType markdown EnableWhitespace
+
+set splitbelow
+set splitright
+
 set termguicolors
 set nowrap
+
+set ignorecase
+set smartcase
 
 " from https://learnvimscriptthehardway.stevelosh.com/chapters/07.html
 let mapleader = ","
 let maplocalleader = ","
+
 autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
 autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
+
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
 nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
 nnoremap <silent> <Leader>rg :Rg <C-R><C-W><CR>
+
 nnoremap <leader>nt :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
+
 " NERDTree compatibility with vim-tmux-navigator <C-j> in particular
 let g:NERDTreeMapJumpPrevSibling=""
 let g:NERDTreeMapJumpNextSibling=""
@@ -44,13 +60,14 @@ set rtp+=~/.fzf
 Plug '~/.fzf'
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
  Plug 'junegunn/fzf.vim'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 Plug 'vim-airline/vim-airline'
 Plug 'psliwka/vim-smoothie'
 Plug 'm-pilia/vim-ccls'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'tpope/vim-obsession '
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'kergoth/vim-bitbake'
 "Plug 'stsewd/sphinx.nvim', { 'do': ':UpdateRemotePlugins' "}
@@ -64,8 +81,9 @@ Plug 'liuchengxu/vista.vim'
 " dependency to vim-textobj-parameter'
 Plug 'kana/vim-textobj-user'
 Plug 'sgur/vim-textobj-parameter'
-Plug 'vim-scripts/Conque-GDB'
+" Plug 'vim-scripts/Conque-GDB'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -94,7 +112,7 @@ set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=300
+set updatetime=100
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
@@ -133,18 +151,6 @@ endif
 " format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.

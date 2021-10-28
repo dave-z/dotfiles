@@ -22,7 +22,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-setopt histignorealldups sharehistory
+setopt histignorealldups sharehistory completealiases
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
@@ -61,3 +61,13 @@ bindkey "^[[1;5D" backward-word
 
 # grep through non-source controlled files too
 export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/rc
+
+# use fd for fzf
+export FZF_DEFAULT_COMMAND="fd --type file --color=always --exclude='.git' --no-ignore-vcs"
+export FZF_DEFAULT_OPTS="--ansi"
+
+# use the git default pager option, adding i (case insensitive search)
+export LESS="FRXi"
+
+# add pip install location to path
+export PATH="$PATH:${HOME}/.local/bin"
