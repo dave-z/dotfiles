@@ -438,3 +438,25 @@ map Y y$
 " End copy/paste from https://vim.fandom.com/wiki/Example_vimrc
 "
 
+" Function SetIndent
+" Arguments
+" space - 1 if expanding tabs to spaces, 0 if keeping tabs
+" width - optional, indentation size
+function! SetIndent(spaces, ...)
+	if a:0 > 0
+		let width = a:1
+	else
+		if spaces:
+			let width = 4
+		else
+			let width = 8
+		endif
+	endif
+	let &l:expandtab = a:spaces
+	let &l:tabstop = width
+	let &l:shiftwidth = width
+	let &l:softtabstop = width
+endfunction
+
+command! -nargs=? IndentTabs call SetIndent(0, <f-args>)
+command! -nargs=? IndentSpaces call SetIndent(1, <f-args>)
