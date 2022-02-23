@@ -41,6 +41,7 @@ let g:bufExplorerSplitBelow=1
 
 " better whitespace plugin
 " let g:strip_whitespace_on_save = 1
+let g:better_whitespace_guicolor='DarkRed'
 
 " automatic vim-plug installation from https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -88,7 +89,7 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 set mouse=a
-set number
+set relativenumber
 
 colorscheme molokai
 
