@@ -22,7 +22,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-setopt histignorealldups sharehistory completealiases
+setopt histignorealldups sharehistory completealiases extended_glob
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
