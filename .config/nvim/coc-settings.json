@@ -15,7 +15,12 @@
          "highlight": {
            "lsRanges": true
          },
-       }
+         "clang": {
+           "excludeArgs": [
+             "-mabi=lp64"
+           ]
+         }
+      }
     },
     "bash": {
       "command": "bash-language-server",
