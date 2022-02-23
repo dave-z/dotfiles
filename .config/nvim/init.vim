@@ -463,3 +463,17 @@ endfunction
 
 command! -nargs=? IndentTabs call SetIndent(0, <f-args>)
 command! -nargs=? IndentSpaces call SetIndent(1, <f-args>)
+
+"
+" Toggle a format option
+"
+function ToggleOption(option)
+  if &formatoptions =~# a:option
+    exec "set formatoptions-=".a:option
+  else
+    exec "set formatoptions+=".a:option
+  endif
+endfunction
+
+" Toggle format option a (auto-format)
+nnoremap <leader>A :<C-u>call ToggleOption('a')<cr>
