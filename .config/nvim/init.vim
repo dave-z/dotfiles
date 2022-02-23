@@ -1,3 +1,5 @@
+set path+=**
+
 " airline status customizations, reduce status bar usage
 let g:airline#extensions#branch#enabled = 0
 let g:airline#extensions#whitespace#enabled = 0
@@ -447,7 +449,7 @@ function! SetIndent(spaces, ...)
 	if a:0 > 0
 		let width = a:1
 	else
-		if spaces:
+		if a:spaces
 			let width = 4
 		else
 			let width = 8
