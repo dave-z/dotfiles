@@ -70,7 +70,7 @@ Plug 'psliwka/vim-smoothie'
 Plug 'm-pilia/vim-ccls'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
-Plug 'tpope/vim-obsession '
+Plug 'tpope/vim-obsession'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'kergoth/vim-bitbake'
 "Plug 'stsewd/sphinx.nvim', { 'do': ':UpdateRemotePlugins' "}
