@@ -18,8 +18,13 @@ for srcfile in $(find $rootdir -type l -or -type f -not -path "${rootdir}/.git*"
         mv -i "$dstfile" "${dstfile}.orig"
     fi
     srcfile="$(realpath_alt $srcfile)"
-    echo "creating symlink $dstfile -> $srcfile"
     mkdir -p "$(dirname ${dstfile})"
-    ln -fs "$srcfile" "$dstfile"
+    if [ ! -L $srcfile ]; then
+        echo "creating symlink $dstfile -> $srcfile"
+        ln -fs "$srcfile" "$dstfile"
+    else
+        echo "copying symlink $dstfile -> $srcfile"
+        cp -P "$srcfile" "$dstfile"
+    fi
 done
 
