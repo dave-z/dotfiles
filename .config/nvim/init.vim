@@ -43,7 +43,7 @@ let g:bufExplorerSplitBelow=1
 
 " better whitespace plugin
 " let g:strip_whitespace_on_save = 1
-let g:better_whitespace_guicolor='DarkRed'
+let g:better_whitespace_guicolor='grey20'
 
 " automatic vim-plug installation from https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -71,6 +71,7 @@ Plug 'm-pilia/vim-ccls'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-surround'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'kergoth/vim-bitbake'
 "Plug 'stsewd/sphinx.nvim', { 'do': ':UpdateRemotePlugins' "}
@@ -87,6 +88,7 @@ Plug 'sgur/vim-textobj-parameter'
 " Plug 'vim-scripts/Conque-GDB'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
@@ -94,7 +96,7 @@ set mouse=a
 set relativenumber
 
 colorscheme molokai
-
+highlight Search guibg=guibg guifg=guifg gui=inverse
 "
 " Start copy/paste from https://github.com/neoclide/coc.nvim#example-vim-configuration
 "
