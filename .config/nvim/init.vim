@@ -99,6 +99,7 @@ set relativenumber
 
 colorscheme molokai
 highlight Search guibg=guibg guifg=guifg gui=inverse
+hi MatchParen      guifg=#FFFFFF guibg=#FD971F gui=bold
 "
 " Start copy/paste from https://github.com/neoclide/coc.nvim#example-vim-configuration
 "
