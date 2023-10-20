@@ -1,3 +1,5 @@
+let g:smoothie_enabled = 0
+
 set path+=**
 
 " airline status customizations, reduce status bar usage
