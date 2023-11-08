@@ -17,7 +17,10 @@
          },
          "clang": {
            "excludeArgs": [
-             "-mabi=lp64"
+             "-mabi=lp64",
+             "-fno-guess-branch-probability",
+             "-mcpu=cortex-a53+crc+crypto",
+             "-mtune=cortex-a72.cortex-a53"
            ]
          }
       }
